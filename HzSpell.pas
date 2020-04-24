@@ -34,7 +34,7 @@ function GetHzPyFull(HzChar: AnsiString): AnsiString;
 
 function GetHzPyHead(HzChar: PAnsiChar; Len: Integer): string;
 
-function GetPyChars(HzChar: string): string;
+function GetPyChars(HzChar: AnsiString): string;
 
 implementation
 
@@ -131,12 +131,12 @@ begin
   Result := Copy(GetHzPy(HzChar, Len), 1, 1);
 end;
 
-function GetPyChars(HzChar: string): string;
+function GetPyChars(HzChar: AnsiString): string;
 var
   i, len: Integer;
   Py: string;
 
-  function IsDouByte(C: Char): Boolean;
+  function IsDouByte(C: AnsiChar): Boolean;
   begin
     Result := C >= #129;
   end;
